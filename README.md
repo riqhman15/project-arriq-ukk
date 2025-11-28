@@ -1,66 +1,180 @@
+# Dokumentasi Tempat
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Tentang Project Ini
 
-## About Laravel
+**Dokumentasi Tempat** adalah sebuah aplikasi web berbasis Laravel yang dirancang untuk mendokumentasikan dan mengelola data tempat-tempat (lokasi) dengan kategori tertentu. Aplikasi ini memungkinkan pengguna untuk:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- 📍 Menambah dan mengelola data tempat dengan informasi lengkap (nama, alamat, deskripsi)
+- 📂 Mengorganisir tempat ke dalam kategori
+- 📸 Mengunggah foto/gambar untuk setiap tempat
+- 👥 Mengelola pengguna dengan sistem autentikasi
+- 📊 Melihat statistik dan ringkasan data melalui dashboard
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Teknologi yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Framework**: Laravel 12
+- **PHP**: 8.2+
+- **Database**: MySQL/MariaDB
+- **Frontend**: Blade Template Engine, Tailwind CSS
+- **Build Tool**: Vite
+- **Package Manager**: Composer, NPM
 
-## Learning Laravel
+### Fitur Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Manajemen Tempat** - Tambah, ubah, dan hapus data tempat
+2. **Kategori Tempat** - Organisir tempat berdasarkan kategori
+3. **Galeri Foto** - Unggah dan kelola foto untuk setiap tempat
+4. **Autentikasi Pengguna** - Sistem login dan registrasi
+5. **Dashboard** - Tampilan ringkasan statistik data
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Cara Menjalankan Website Ini
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Prerequisites (Persyaratan)
 
-## Laravel Sponsors
+Sebelum menjalankan aplikasi ini, pastikan Anda telah menginstal:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **PHP** (versi 8.2 atau lebih tinggi)
+- **Composer** (package manager PHP)
+- **Node.js & NPM** (untuk menjalankan Vite)
+- **MySQL/MariaDB** (database server)
+- **Git** (untuk cloning repository)
 
-### Premium Partners
+### Langkah Instalasi
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+#### 1. Clone Repository
+```bash
+git clone https://github.com/riqhman15/project-arriq-ukk.git
+cd dokumentasi-tempat
+```
+
+#### 2. Install PHP Dependencies
+```bash
+composer install
+```
+
+#### 3. Buat File .env
+```bash
+cp .env.example .env
+```
+
+#### 4. Generate Application Key
+```bash
+php artisan key:generate
+```
+
+#### 5. Konfigurasi Database
+
+Buka file `.env` dan sesuaikan konfigurasi database Anda:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=dokumentasi_tempat
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+#### 6. Jalankan Database Migrations
+```bash
+php artisan migrate
+```
+
+#### 7. Install Node Dependencies
+```bash
+npm install
+```
+
+#### 8. Build Frontend Assets
+```bash
+npm run build
+```
+
+Atau untuk development dengan hot reload:
+```bash
+npm run dev
+```
+
+#### 9. Jalankan Development Server
+```bash
+php artisan serve
+```
+
+Aplikasi akan tersedia di `http://localhost:8000`
+
+### Penggunaan
+
+Setelah aplikasi berjalan, Anda dapat:
+
+1. **Register/Login** - Buat akun baru atau login dengan akun yang sudah ada
+2. **Dashboard** - Lihat statistik jumlah tempat, kategori, dan pengguna
+3. **Kelola Kategori** - Tambah kategori baru untuk mengorganisir tempat
+4. **Kelola Tempat** - Tambah tempat baru dengan informasi lengkap dan foto
+5. **Lihat Galeri** - Tampilkan semua tempat yang telah didokumentasikan
+
+### Troubleshooting
+
+#### Masalah: "Composer command not found"
+**Solusi**: Pastikan Composer sudah terinstall dengan benar dan PATH sudah dikonfigurasi.
+
+#### Masalah: "PDO Exception" saat migration
+**Solusi**: Pastikan MySQL/MariaDB sedang berjalan dan konfigurasi `.env` sudah benar.
+
+#### Masalah: "npm: command not found"
+**Solusi**: Pastikan Node.js dan npm sudah terinstall. Download dari https://nodejs.org
+
+#### Masalah: Folder storage tidak writable
+**Solusi**: Berikan permission pada folder storage:
+```bash
+chmod -R 775 storage/
+chmod -R 775 bootstrap/cache/
+```
+
+### File Penting
+
+- `.env` - Konfigurasi environment aplikasi
+- `app/Models/` - Model aplikasi (User, Kategori, Tempat, dll)
+- `routes/web.php` - Definisi route aplikasi
+- `resources/views/` - Template Blade
+- `database/migrations/` - File migrasi database
+- `public/` - Folder public untuk file statik
+
+## Laravel Framework
+
+Laravel adalah web application framework dengan syntax yang ekspresif dan elegan. Untuk mempelajari lebih lanjut tentang Laravel, kunjungi:
+
+- [Laravel Documentation](https://laravel.com/docs)
+- [Laravel Bootcamp](https://bootcamp.laravel.com)
+- [Laracasts](https://laracasts.com)
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Terima kasih telah mempertimbangkan untuk berkontribusi pada project ini! Contribution guide dapat ditemukan di [Laravel documentation](https://laravel.com/docs/contributions).
 
 ## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Untuk memastikan komunitas Laravel tetap ramah bagi semua, harap review dan patuhi [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## Dokumentasi
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Project ini memiliki dokumentasi lengkap mengenai arsitektur dan struktur database:
 
-## License
+- **[ERD.md](./ERD.md)** - Entity Relationship Diagram yang mendokumentasikan schema database, struktur tabel, dan relasi antar entity
+- **[UML.md](./UML.md)** - UML Diagrams termasuk class diagrams, sequence diagrams, dan data flow diagrams untuk arsitektur aplikasi
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Model Database
+- **User** - Pengguna aplikasi dengan sistem autentikasi
+- **Kategori** - Kategori untuk mengorganisir tempat
+- **Tempat** - Data tempat dengan informasi lengkap
+- **Foto** - Manajemen foto/gambar
+- **Dashboard** - Statistik dan metrik aplikasi
+
+### Relasi Antar Model
+- Satu Kategori dapat memiliki banyak Tempat (relasi 1:N)
+- User dapat mengautentikasi dan mengelola tempat
+
+## Lisensi
+
+Laravel framework adalah open-source software yang dilisensikan di bawah [MIT license](https://opensource.org/licenses/MIT).
