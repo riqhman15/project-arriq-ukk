@@ -96,7 +96,7 @@
     <div class="mt-5 p-5 rounded-4 shadow-sm text-center welcome-box">
         <h3 class="fw-bold text-dark mb-3">Selamat Datang di Sistem Dokumentasi Kasi PMD</h3>
         <p class="text-muted fs-5 mb-3">
-            Gunakan menu di atas untuk mengelola data tempat, kategori, dan dokumentasi.
+            Gunakan menu di atas untuk mengelola data dokumentasi dan acara.
         </p>
         <a href="{{ route('tempat.index') }}" class="btn btn-dark btn-lg px-4 rounded-pill shadow-sm">
             Mulai Kelola Data
