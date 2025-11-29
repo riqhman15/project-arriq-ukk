@@ -1,19 +1,22 @@
 @extends('layout.app')
 
 @section('content')
+<div class="container">
 
-<h3>Edit Kategori</h3>
+    <h3 class="mb-3">Edit Kategori</h3>
 
-<form action="{{ route('kategori.update', $data->id) }}" method="POST">
-    @csrf
-    @method('PUT')
+    <form action="{{ route('kategori.update', $kategori->id) }}" method="POST">
+        @csrf
+        @method('PUT')
 
-    <div class="mb-3">
-        <label>Nama Kategori</label>
-        <input type="text" name="nama" class="form-control" value="{{ $data->nama }}" required>
-    </div>
+        <div class="mb-3">
+            <label>Nama Kategori</label>
+            <input type="text" name="nama" class="form-control" value="{{ $kategori->nama }}" required>
+        </div>
 
-    <button class="btn btn-primary">Update</button>
-</form>
+        <button class="btn btn-primary">Update</button>
+        <a href="{{ route('kategori.index') }}" class="btn btn-secondary">Kembali</a>
+    </form>
 
+</div>
 @endsection
