@@ -10,22 +10,15 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-{
-    Schema::create('dashboards', function (Blueprint $table) {
-        $table->id();
-        $table->integer('total_tempat')->default(0);
-        $table->integer('total_kategori')->default(0);
-        $table->integer('total_user')->default(0);
-        $table->timestamps();
-    });
-}
-
+    {
+        // Dashboard hanya menampilkan statistik, tidak perlu table terpisah
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('dashboards');
+        // Tidak ada yang perlu di-rollback
     }
 };

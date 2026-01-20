@@ -11,10 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fotos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        // Tidak perlu table fotos terpisah, foto sudah ada di tempats table
     }
 
     /**
@@ -22,6 +19,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fotos');
+        // Tidak ada yang perlu di-rollback
     }
 };

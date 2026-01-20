@@ -4,15 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Models\Tempat;
 use App\Models\Kategori;
+use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
-    public function index()
+    /**
+     * Display the dashboard with statistics and recent documentation
+     */
+    public function index(): View
     {
-        $totalTempat   = Tempat::count();
+        // Hitung total tempat
+        $totalTempat = Tempat::count();
+
+        // Hitung total kategori
         $totalKategori = Kategori::count();
 
-        $recentFoto = Tempat::whereNotNull('foto')
+        // Ambil 6 dokumentasi terbaru dengan foto
+        $recentFoto = Tempat::with('kategori')
+                            ->whereNotNull('foto')
                             ->latest()
                             ->take(6)
                             ->get();

@@ -9,19 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-   public function up(): void
-{
-    Schema::table('tempats', function (Blueprint $table) {
-        $table->string('judul')->nullable();
-        $table->text('keterangan')->nullable();
-    });
-}
+    public function up(): void
+    {
+        // Migration ini sudah ditangani di 2025_11_28_054626_add_judul_keterangan_to_tempats_table
+        // Jadi tidak perlu dilakukan apa-apa di sini
+    }
 
-public function down(): void
-{
-    Schema::table('tempats', function (Blueprint $table) {
-        $table->dropColumn(['judul', 'keterangan']);
-    });
-}
-
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        // Tidak ada yang perlu di-rollback
+    }
 };

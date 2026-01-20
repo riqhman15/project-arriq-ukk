@@ -8,18 +8,18 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('dokumens', function (Blueprint $table) {
+        Schema::create('tempats', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->text('isi_acara');
-            $table->string('dispen'); // penanggung jawab
-            $table->date('tanggal');
+            $table->string('nama');
+            $table->string('alamat');
+            $table->foreignId('kategori_id')->constrained('kategoris')->onDelete('cascade');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('dokumens');
+        Schema::dropIfExists('tempats');
     }
 };
